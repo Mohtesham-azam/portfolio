@@ -41,7 +41,7 @@ section .title::after{
     background: white;
     transform: translateX(-50%);
 }
-.about, .qualification, .skills, .project, .contact, footer{
+.about, .qualification, .experience, .skills, .project, .contact, footer{
     font-family: 'poppins',sans-serif;
 }
 /* nav bar */
@@ -152,25 +152,32 @@ section .title::after{
     font-family: 'Ubuntu',sans-serif;
 }
 .home .max-width{
-    margin: auto 0 auto 40px;
+    margin: auto 0 auto 0;
 }
-.home .home-content .text-1{
+.home .home-content{
+    display: flex;
+    justify-content: space-between;
+}
+.home .home-content .left{
+    width: 80%;
+}
+.home .home-content .left .text-1{
     font-size: 30px;
 }
-.home .home-content .text-2{ 
+.home .home-content .left .text-2{ 
     font-size: 60px;
     font-weight: 600;
     margin-left: -3px;
 }
-.home .home-content .text-3{
+.home .home-content .left .text-3{
     font-size: 45px;
     margin: 5px 0;
 }
-.home .home-content .text-3 span{
+.home .home-content .left .text-3 span{
     color: crimson;
     font-weight: 500;
 }
-.home .home-content a{
+.home .home-content .left a{
     display: inline-block;
     background: crimson;
     color: white;
@@ -180,9 +187,12 @@ section .title::after{
     border: 2px solid crimson;
     transition: all 0.3s ease;
 }
-.home .home-content a:hover{
+.home .home-content .left a:hover{
     color: crimson;
     background: none;
+}
+.home .home-content .right{
+    width: 20%;
 }
 /* about section */
 .about .title::after{
@@ -220,7 +230,7 @@ section .title::after{
 }
 /* qualification section */
 .qualification{
-    height: 100vh;
+    height: 100%;
     background: rgb(88, 85, 85);
 }
 .qualification .title::after{
@@ -270,6 +280,80 @@ section .title::after{
 .qualification .qualification-content .content p{
     font-size: 25px;
 }
+/* experience section */
+.experience{
+    height: 100%;
+    background: rgb(88, 85, 85);
+}
+.experience .title::after{
+    content: "my timeline";
+    background: rgb(88, 85, 85);
+}
+.experience .experience-content{
+    display: flex;
+}
+.experience .experience-content .container{
+    display: block;
+    align-items: center;
+    width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-right: 1%;
+    margin-top: 20px; */
+}
+.experience .experience-content .collapsible{
+    background: crimson;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+    width: 100%;
+    border: 2px solid crimson;
+    border-radius: 6px;
+    outline: none;
+}
+.experience .experience-content .collapsible:hover{
+    background: none;
+    color: crimson;
+}
+.experience .experience-content .content{
+    padding: 0 18px;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: crimson;
+    border-radius: 6px;
+    color: white;
+}
+.experience .experience-content .content h3{
+    margin: 15px 0;
+    font-size: 40px;
+}
+.experience .experience-content .content p{
+    font-size: 25px;
+}
+/* certificate section */
+.certificate .title::after{
+    content: "My Achivement";
+}
+.certificate .certificate-content{
+    display: flex;
+}
+.certificate .certificate-content .container{
+    display: flex;
+}
+.certificate .certificate-content .text strong{
+    font-size: 30px;
+    margin-left: 15px;
+}
+.certificate .certificate-content .text h2,h3{
+    text-align: justify;
+    padding: 10px;
+    /* margin-bottom: 20px; */
+    /* font-size: 20px; */
+}
 /* skills section */
 .skills .title::after{
     content: "My Expertise";
@@ -301,26 +385,26 @@ section .title::after{
     margin: 50% auto;
     width: 130%;
 }
-.skills .skills-content .right .bars{
+.skills .skills-content .left .bars{
     margin-left: 30px;
     margin-bottom: 15px;
 }
-.skills .skills-content .right .info{
+.skills .skills-content .left .info{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.skills .skills-content .right span{
+.skills .skills-content .left span{
     font-weight: 500;
     font-size: 18px;
 }
-.skills .skills-content .right .line{
+.skills .skills-content .left .line{
     height: 5px;
     width: 100%;
     background: lightgrey;
     position: relative;
 }
-.skills .skills-content .right .line::before{
+.skills .skills-content .left .line::before{
     content: "";
     position: absolute;
     height: 100%;
@@ -328,26 +412,41 @@ section .title::after{
     top: 0;
     background: crimson;
 }
-.skills-content .right .cpp::before{
+.skills-content .left .cpp::before{
     width: 75%;
 }
-.skills-content .right .c::before{
+.skills-content .left .c::before{
     width: 95%;
 }
-.skills-content .right .java::before{
+.skills-content .left .java::before{
     width: 85%;
 }
-.skills-content .right .python::before{
-    width: 75%;
-}
-.skills-content .right .html::before{
+.skills-content .left .python::before{
     width: 90%;
 }
-.skills-content .right .css::before{
-    width: 85%;
+.skills-content .left .html::before{
+    width: 100%;
 }
-.skills-content .right .js::before{
-    width: 60%;
+.skills-content .left .css::before{
+    width: 100%;
+}
+.skills-content .left .js::before{
+    width: 90%;
+}
+.skills-content .left .cs::before{
+    width: 80%;
+}
+.skills-content .left .sql::before{
+    width: 80%;
+}
+.skills-content .left .jq::before{
+    width: 80%;
+}
+.skills-content .left .bs::before{
+    width: 100%;
+}
+.skills-content .left .dn::before{
+    width: 80%;
 }
 /* project section */
 .project{
@@ -523,13 +622,13 @@ footer span a:hover{
         margin: 20px 0;
         font-size: 25px;
     }
-    .home .home-content .text-2{
+    .home .home-content .left .text-2{
         font-size: 70px;
     }
-    .home .home-content .text-3{
+    .home .home-content .left .text-3{
         font-size: 35px;
     }
-    .home .home-content a{
+    .home .home-content .left a{
         font-size: 23px;
         padding: 10px 30px;
     }
@@ -561,6 +660,22 @@ footer span a:hover{
         font-size: 25px;
     }
     .qualification .qualification-content .content p{
+        font-size: 15px;
+    }
+    .experience .experience-content .collapsible{
+        font-size: 25px;
+    }
+    .experience .experience-content .container{
+        margin-right: 2%;
+        width: 31%;
+    }
+    .experience .experience-content .content{
+        max-height: 100%;
+    }
+    .experience .experience-content .content h3{
+        font-size: 25px;
+    }
+    .experience .experience-content .content p{
         font-size: 15px;
     }
     .skills .skills-content{
@@ -611,6 +726,21 @@ footer span a:hover{
     .qualification .qualification-content .content p{
         font-size: 20px;
     }
+    .experience{
+        height: fit-content;
+    }
+    .experience .experience-content{
+        display: block;
+    }
+    .experience .experience-content .container{
+        width: 100%;
+    }
+    .experience .experience-content .content h3{
+        font-size: 30px;
+    }
+    .experience .experience-content .content p{
+        font-size: 20px;
+    }
     footer{
         font-size: 15px;
     }
@@ -642,6 +772,11 @@ footer span a:hover{
         font-size: 15px;
     }
     .qualification .title::after,
+    .skills .title::after{
+        font-size: 18px;
+    }
+    
+    .experience .title::after,
     .skills .title::after{
         font-size: 18px;
     }
