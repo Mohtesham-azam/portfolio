@@ -152,32 +152,25 @@ section .title::after{
     font-family: 'Ubuntu',sans-serif;
 }
 .home .max-width{
-    margin: auto 0 auto 0;
+    margin: auto 0 auto 40px;
 }
-.home .home-content{
-    display: flex;
-    justify-content: space-between;
-}
-.home .home-content .left{
-    width: 80%;
-}
-.home .home-content .left .text-1{
+.home .home-content .text-1{
     font-size: 30px;
 }
-.home .home-content .left .text-2{ 
+.home .home-content .text-2{ 
     font-size: 60px;
     font-weight: 600;
     margin-left: -3px;
 }
-.home .home-content .left .text-3{
+.home .home-content .text-3{
     font-size: 45px;
     margin: 5px 0;
 }
-.home .home-content .left .text-3 span{
+.home .home-content .text-3 span{
     color: crimson;
     font-weight: 500;
 }
-.home .home-content .left a{
+.home .home-content a{
     display: inline-block;
     background: crimson;
     color: white;
@@ -187,12 +180,9 @@ section .title::after{
     border: 2px solid crimson;
     transition: all 0.3s ease;
 }
-.home .home-content .left a:hover{
+.home .home-content a:hover{
     color: crimson;
     background: none;
-}
-.home .home-content .right{
-    width: 20%;
 }
 /* about section */
 .about .title::after{
@@ -351,8 +341,6 @@ section .title::after{
 .certificate .certificate-content .text h2,h3{
     text-align: justify;
     padding: 10px;
-    /* margin-bottom: 20px; */
-    /* font-size: 20px; */
 }
 /* skills section */
 .skills .title::after{
